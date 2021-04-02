@@ -6,8 +6,9 @@ body {
 }
 
 * {
-  box-sizing: border-box;
   position: relative;
+
+  box-sizing: border-box;
 }
 
 :root {
@@ -22,11 +23,3 @@ body {
 
   --basic-shadow: 0px -1px 22px -3px rgba(0, 0, 0, 0.36);
 }
-
-/* Candidates:
-#7EBCE6
-#7192BE
-#2892B8
-#66CCFF
-#7463f8 (orignal purpl-ish)
-*/

@@ -7,9 +7,9 @@ import { useElementResize } from "@hooks";
 import styles from "@styles/layout.module.css";
 
 export default function Layout({ children }) {
+  // We write the height of the logo in css to be used in mobile screen layout.
   const layoutRef = useRef();
-
-  const setLogoHeight = useCallback(
+  const setCssVar = useCallback(
     (logoElement) => {
       if (layoutRef.current) {
         const logoHeight = logoElement.getBoundingClientRect().height;
@@ -18,8 +18,7 @@ export default function Layout({ children }) {
     },
     [layoutRef.current]
   );
-
-  const logoRef = useElementResize(setLogoHeight);
+  const logoRef = useElementResize(setCssVar);
 
   return (
     <div className={styles.layout} ref={layoutRef}>

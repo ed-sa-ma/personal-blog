@@ -1,11 +1,13 @@
 .layout {
   --padding: 4rem;
+
   padding: var(--padding);
   transition: padding-top 0.1s linear;
 }
 
 .logo {
   position: fixed;
+
   top: var(--padding);
   left: var(--padding);
 }
@@ -19,6 +21,7 @@
   .layout {
     --padding: 2rem;
     --logo-content-margin: 1rem;
+
     padding-top: calc(var(--padding) + var(--logo-height) + var(--logo-content-margin));
     flex-direction: column;
     align-items: stretch;

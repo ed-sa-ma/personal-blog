@@ -26,26 +26,31 @@
 
 .layer.corner-1 {
   z-index: 2;
+
   transform: var(--fix-transform) translateY(var(--base-translate-y));
 }
 
 .layer.corner-2 {
   z-index: 3;
+
   transform: var(--fix-transform) translateY(calc(var(--base-translate-y) + 20px));
 }
 
 .layer.corner-3 {
   z-index: 4;
+
   transform: var(--fix-transform) translateY(calc(var(--base-translate-y) + 40px));
 }
 
 .layer.corner-4 {
   z-index: 5;
+
   transform: var(--fix-transform) translateY(calc(var(--base-translate-y) + 60px));
 }
 
 .layer.outside {
   z-index: 0;
+
   transform: var(--fix-transform) translateY(var(--screen-diagonal));
 }
 

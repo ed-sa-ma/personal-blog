@@ -5,24 +5,23 @@ import { getDiagonal } from "@helpers";
 import { useElementResize, useMovingLayers } from "@hooks";
 import styles from "@styles/background.module.css";
 
-export default function background() {
-  const [transition, setTransition] = useState();
-  const setSizeVar = useCallback((element) => {
+export default function Background() {
+  const setCssVar = useCallback((element) => {
     let windowDiagonal = getDiagonal();
 
     element.style.setProperty("--screen-diagonal", `${windowDiagonal}px`);
   }, []);
-
-  const wrapperRef = useElementResize(setSizeVar);
+  const wrapperRef = useElementResize(setCssVar);
 
   const [classes, animate] = useMovingLayers();
 
+  // We don't want css transition to be applied when the component is first rendered.
+  const [transition, setTransition] = useState();
   useState(() => {
     setTimeout(() => setTransition(true), 100);
   }, []);
 
   function handleKeyDown(event) {
-    console.log(event.key);
     if (event.key === "Enter") animate();
   }
 

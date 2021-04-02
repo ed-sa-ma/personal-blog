@@ -7,7 +7,7 @@ export default function Home() {
   return (
     <Layout>
       <Head>
-        <title>ed-sa-ma's blog</title>
+        <title>Blogerino</title>
       </Head>
       <Card>
         <h1>Lorem ipsum</h1>
