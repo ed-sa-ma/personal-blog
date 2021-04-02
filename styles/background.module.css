@@ -1,0 +1,95 @@
+.background {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.layer {
+  --base-translate-y: calc(var(--screen-diagonal) * 0.75);
+  --fix-transform: translateX(-50%) translateY(-50%) rotate(-30deg);
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 1;
+
+  width: var(--screen-diagonal);
+  height: var(--screen-diagonal);
+  transform: var(--fix-transform);
+  box-shadow: var(--basic-shadow);
+}
+.layer.transition {
+  transition: transform 0.6s ease-in;
+}
+
+.layer.corner-1 {
+  z-index: 2;
+
+  transform: var(--fix-transform) translateY(var(--base-translate-y));
+}
+
+.layer.corner-2 {
+  z-index: 3;
+
+  transform: var(--fix-transform) translateY(calc(var(--base-translate-y) + 20px));
+}
+
+.layer.corner-3 {
+  z-index: 4;
+
+  transform: var(--fix-transform) translateY(calc(var(--base-translate-y) + 40px));
+}
+
+.layer.corner-4 {
+  z-index: 5;
+
+  transform: var(--fix-transform) translateY(calc(var(--base-translate-y) + 60px));
+}
+
+.layer.outside {
+  z-index: 0;
+
+  transform: var(--fix-transform) translateY(var(--screen-diagonal));
+}
+
+.layer.transition.outside {
+  transition: transform 0.3s ease-in 0.6s;
+}
+
+.yellow {
+  background-color: var(--yellow);
+}
+
+.yellow::after {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+
+  content: "";
+  background: url("/granular.png");
+}
+
+.blue {
+  background-color: var(--blue);
+}
+
+.pink {
+  background-color: var(--pink);
+}
+
+.green {
+  background-color: var(--green);
+}
+
+.layer.clickable {
+  cursor: pointer;
+}
+
+.layer.clickable:hover,
+.layer.clickable:focus {
+  filter: brightness(0.9);
+}
