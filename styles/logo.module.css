@@ -1,0 +1,16 @@
+.logo {
+  stroke: var(--white);
+  width: 200px;
+}
+
+@media (max-width: 1400px) {
+  .logo {
+    width: 100px;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo {
+    width: 30px;
+  }
+}
