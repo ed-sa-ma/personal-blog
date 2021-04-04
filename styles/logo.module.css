@@ -1,6 +1,7 @@
 .logo {
   stroke: var(--white);
   width: 200px;
+  filter: drop-shadow(var(--dark-shadow));
 }
 
 @media (max-width: 1400px) {
