@@ -1,9 +1,11 @@
 import Head from "next/head";
+import { prismicClient } from "prismic-configuration.js";
 
 import Layout from "@components/layout.js";
 import Card from "@components/card.js";
 
-export default function Home() {
+export default function Home({ doc }) {
+  console.log({ doc });
   return (
     <Layout>
       <Head>
@@ -120,4 +122,20 @@ export default function Home() {
       </Card>
     </Layout>
   );
+}
+
+export async function getStaticProps() {
+  try {
+    const response = await prismicClient.getSingle("landing_page");
+    var { data: doc } = response;
+  } catch (error) {
+    console.error(`Type: ${error.name}`);
+    console.error(error.stack);
+  }
+
+  return {
+    props: {
+      doc
+    }
+  };
 }
