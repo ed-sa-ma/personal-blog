@@ -7,9 +7,11 @@ import styles from "@styles/background.module.css";
 
 export default function Background() {
   const setCssVar = useCallback((element) => {
-    let windowDiagonal = getDiagonal();
+    if (element) {
+      let windowDiagonal = getDiagonal();
 
-    element.style.setProperty("--screen-diagonal", `${windowDiagonal}px`);
+      element.style.setProperty("--screen-diagonal", `${windowDiagonal}px`);
+    }
   }, []);
   const wrapperRef = useElementResize(setCssVar);
 
