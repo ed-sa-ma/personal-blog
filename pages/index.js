@@ -21,7 +21,7 @@ export default function Home({ doc }) {
   );
 }
 
-export async function getStaticProps({ preview, previewData }) {
+export async function getStaticProps({ preview = false, previewData }) {
   try {
     const response = await prismicClient.getSingle("landing_page", previewData);
     var { data: doc } = response;
@@ -33,7 +33,7 @@ export async function getStaticProps({ preview, previewData }) {
   return {
     props: {
       doc,
-      preview: !!preview
+      preview
     }
   };
 }
