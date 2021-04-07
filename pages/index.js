@@ -124,9 +124,9 @@ export default function Home({ doc }) {
   );
 }
 
-export async function getStaticProps() {
+export async function getStaticProps({ preview, previewData }) {
   try {
-    const response = await prismicClient.getSingle("landing_page");
+    const response = await prismicClient.getSingle("landing_page", previewData);
     var { data: doc } = response;
   } catch (error) {
     console.error(`Type: ${error.name}`);
@@ -135,7 +135,8 @@ export async function getStaticProps() {
 
   return {
     props: {
-      doc
+      doc,
+      preview: !!preview
     }
   };
 }
