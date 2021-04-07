@@ -1,0 +1,11 @@
+.image {
+  display: flex;
+  justify-content: center;
+  max-width: 100%;
+}
+
+.image-element {
+  width: 70%;
+  max-width: var(--max-width);
+  filter: drop-shadow(var(--image-shadow));
+}

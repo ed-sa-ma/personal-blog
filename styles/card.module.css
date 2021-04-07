@@ -5,8 +5,6 @@
   box-shadow: var(--basic-shadow);
 }
 
-@media (max-width: 480px) {
-  .card {
-    padding: 1rem;
-  }
+.card > * + * {
+  margin-top: 2rem;
 }

@@ -1,4 +1,4 @@
-import { client } from "prismic-configuration.js";
+import { prismicClient } from "prismic-configuration.js";
 
 function linkResolver(doc) {
   // Pretty URLs for known types
@@ -12,7 +12,7 @@ function linkResolver(doc) {
 export default async function preview(req, res) {
   const { token: ref, documentId } = req.query;
 
-  const url = await client.getPreviewResolver(ref, documentId).resolve(linkResolver, "/");
+  const url = await prismicClient.getPreviewResolver(ref, documentId).resolve(linkResolver, "/");
 
   if (!url) {
     return res.status(401).json({ message: "Invalid token" });
