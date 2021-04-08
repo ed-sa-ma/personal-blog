@@ -1,5 +1,6 @@
 import { RichText } from "prismic-reactjs";
 
+import CodeImage from "./codeImage";
 import Image from "./image";
 
 export default function Parser({ data }) {
@@ -17,7 +18,7 @@ export default function Parser({ data }) {
             const codeSnippet = slice.primary["code_snippet"];
             const props = { codeSnippet, ...slice.primary.image };
 
-            return <Image key={props.url} {...props} />;
+            return <CodeImage key={props.url} {...props} />;
           }
           case "text": {
             const paragraphs = slice.primary.content;

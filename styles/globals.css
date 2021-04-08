@@ -11,6 +11,10 @@ body {
   box-sizing: border-box;
 }
 
+pre {
+  overflow: auto;
+}
+
 :root {
   --blue: #66ccff;
   --yellow: #ccff33;

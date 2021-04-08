@@ -9,3 +9,9 @@
   max-width: var(--max-width);
   filter: drop-shadow(var(--image-shadow));
 }
+
+@media (max-width: 480px) {
+  .image-element {
+    width: 100%;
+  }
+}
