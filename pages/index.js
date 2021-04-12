@@ -14,7 +14,7 @@ export default function Home({ doc }) {
         <title>Blogerino</title>
       </Head>
       <Card>
-        <h1 style={{ textAlign: "center" }}>{headline[0].text}</h1>
+        <h1 style={{ textAlign: "center" }}>{headline}</h1>
         <Parser data={body} />
       </Card>
     </Layout>
