@@ -20,8 +20,9 @@
   transform: var(--fix-transform);
   box-shadow: var(--basic-shadow);
 }
+
 .layer.transition {
-  transition: transform 0.6s ease-in;
+  transition: transform 0.7s ease-in-out;
 }
 
 .layer.corner-1 {
@@ -62,7 +63,10 @@
   background-color: var(--yellow);
 }
 
-.yellow::after {
+.yellow::after,
+.blue::after,
+.green:after,
+.pink:after {
   position: absolute;
   top: 0;
   right: 0;
@@ -70,7 +74,22 @@
   bottom: 0;
 
   content: "";
-  background: url("/granular.png");
+}
+
+.yellow::after {
+  background: url("/textures/diagonals.png");
+}
+
+.green::after {
+  background: url("/textures/grunge.png");
+}
+
+.blue::after {
+  background: url("/textures/granular.png");
+}
+
+.pink::after {
+  background: url("/textures/canvas.png");
 }
 
 .blue {
