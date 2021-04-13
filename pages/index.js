@@ -4,26 +4,34 @@ import Link from "next/link";
 import { Prismic, prismicClient } from "prismic-configuration.js";
 import Card from "@components/card.js";
 import Parser from "@components/parser";
+import List from "@components/list";
 
 export default function Home({ doc, posts }) {
-  const { headline, body } = doc;
+  const { headline, list_headline, body } = doc;
 
   return (
     <>
       <Head>
         <title>Blogerino</title>
       </Head>
-      <Card>
-        <h1 style={{ textAlign: "center" }}>{headline}</h1>
-        <Parser data={body} />
-        {posts.map((post) => (
-          <div>
-            <Link key={post.uid} href={`/posts/${post.uid}`}>
-              <a>{post.headline}</a>
-            </Link>
-          </div>
-        ))}
-      </Card>
+      <List>
+        <Card>
+          <h1 style={{ textAlign: "center" }}>{headline}</h1>
+          <Parser data={body} />
+        </Card>
+        <Card>
+          {posts.map((post) => (
+            <>
+              <h1 style={{ textAlign: "center" }}>{list_headline}</h1>
+              <div>
+                <Link key={post.uid} href={`/posts/${post.uid}`}>
+                  <a>{post.headline}</a>
+                </Link>
+              </div>
+            </>
+          ))}
+        </Card>
+      </List>
     </>
   );
 }
