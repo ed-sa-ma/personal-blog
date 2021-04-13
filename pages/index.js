@@ -50,7 +50,7 @@ export async function getStaticProps({ preview = false, previewData }) {
       return { uid, headline: data.headline };
     });
   } catch (error) {
-    console.error(`Type: ${error.name}`);
+    console.error(`Error fetching static props in Home component. Type: ${error.name}`);
     console.error(error.stack);
   }
 

@@ -21,16 +21,26 @@ export default function Post({ doc }) {
 }
 
 export async function getStaticProps({ params, preview = false, previewData }) {
-  let { uid } = params;
-  let response = await prismicClient.getByUID("post", uid, previewData);
-  let { data: doc } = response;
+  try {
+    let { uid } = params;
+    let response = await prismicClient.getByUID("post", uid, previewData);
+    var { data: doc } = response;
+  } catch (error) {
+    console.error(`Error fetching static props in Post component. Type: ${error.name}`);
+    console.error(error.stack);
+  }
 
   return { props: { doc, preview } };
 }
 
-export async function getStaticPaths({}) {
-  let response = await prismicClient.query(Prismic.Predicates.at("document.type", "post"));
-  let { results: docs } = response;
+export async function getStaticPaths() {
+  try {
+    let response = await prismicClient.query(Prismic.Predicates.at("document.type", "post"));
+    var { results: docs } = response;
+  } catch (error) {
+    console.error(`Error fetching static paths in Post component. Type: ${error.name}`);
+    console.error(error.stack);
+  }
 
   return {
     paths: docs.map((doc) => {
