@@ -20,15 +20,11 @@ export default function Home({ doc, posts }) {
           <Parser data={body} />
         </Card>
         <Card>
+          <h1 style={{ textAlign: "center" }}>{list_headline}</h1>
           {posts.map((post) => (
-            <>
-              <h1 style={{ textAlign: "center" }}>{list_headline}</h1>
-              <div>
-                <Link key={post.uid} href={`/posts/${post.uid}`}>
-                  <a>{post.headline}</a>
-                </Link>
-              </div>
-            </>
+            <Link key={post.uid} href={`/posts/${post.uid}`}>
+              <a>{post.headline}</a>
+            </Link>
           ))}
         </Card>
       </List>
