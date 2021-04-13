@@ -6,3 +6,5 @@ export const accessToken = process.env.ACCESS_TOKEN || "";
 export const prismicClient = Prismic.client(apiEndpoint, {
   ...(accessToken ? { accessToken } : null)
 });
+
+export { Prismic };

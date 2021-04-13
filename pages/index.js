@@ -1,10 +1,11 @@
 import Head from "next/head";
-import { prismicClient } from "prismic-configuration.js";
+import Link from "next/link";
 
+import { Prismic, prismicClient } from "prismic-configuration.js";
 import Card from "@components/card.js";
 import Parser from "@components/parser";
 
-export default function Home({ doc }) {
+export default function Home({ doc, posts }) {
   const { headline, body } = doc;
 
   return (
@@ -15,6 +16,13 @@ export default function Home({ doc }) {
       <Card>
         <h1 style={{ textAlign: "center" }}>{headline}</h1>
         <Parser data={body} />
+        {posts.map((post) => (
+          <div>
+            <Link key={post.uid} href={`/posts/${post.uid}`}>
+              <a>{post.headline}</a>
+            </Link>
+          </div>
+        ))}
       </Card>
     </>
   );
@@ -22,8 +30,17 @@ export default function Home({ doc }) {
 
 export async function getStaticProps({ preview = false, previewData }) {
   try {
-    const response = await prismicClient.getSingle("landing_page", previewData);
-    var { data: doc } = response;
+    const docRes = await prismicClient.getSingle("landing_page", previewData);
+    const postsRes = await prismicClient.query(
+      Prismic.Predicates.at("document.type", "post"),
+      previewData
+    );
+    var { data: doc } = docRes;
+    let { results } = postsRes;
+
+    var posts = results.map(({ uid, data }) => {
+      return { uid, headline: data.headline };
+    });
   } catch (error) {
     console.error(`Type: ${error.name}`);
     console.error(error.stack);
@@ -32,6 +49,7 @@ export async function getStaticProps({ preview = false, previewData }) {
   return {
     props: {
       doc,
+      posts,
       preview
     }
   };
