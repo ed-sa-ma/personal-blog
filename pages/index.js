@@ -1,7 +1,6 @@
 import Head from "next/head";
 import { prismicClient } from "prismic-configuration.js";
 
-import Layout from "@components/layout.js";
 import Card from "@components/card.js";
 import Parser from "@components/parser";
 
@@ -9,7 +8,7 @@ export default function Home({ doc }) {
   const { headline, body } = doc;
 
   return (
-    <Layout>
+    <>
       <Head>
         <title>Blogerino</title>
       </Head>
@@ -17,7 +16,7 @@ export default function Home({ doc }) {
         <h1 style={{ textAlign: "center" }}>{headline}</h1>
         <Parser data={body} />
       </Card>
-    </Layout>
+    </>
   );
 }
 
