@@ -5,14 +5,14 @@ import Card from "@components/card";
 import Parser from "@components/parser";
 
 export default function Post({ doc }) {
-  let { headline, body } = doc;
+  let { heading_image, headline, body } = doc;
 
   return (
     <>
       <Head>
         <title>{headline}</title>
       </Head>
-      <Card>
+      <Card image={heading_image}>
         <h1>{headline}</h1>
         <Parser data={body} />
       </Card>
