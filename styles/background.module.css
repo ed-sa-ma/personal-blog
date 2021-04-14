@@ -103,12 +103,3 @@
 .green {
   background-color: var(--green);
 }
-
-.layer.clickable {
-  cursor: pointer;
-}
-
-.layer.clickable:hover,
-.layer.clickable:focus {
-  filter: brightness(0.9);
-}

@@ -1,0 +1,37 @@
+.button {
+  --margin: 1rem;
+
+  position: fixed;
+  bottom: var(--margin);
+  right: var(--margin);
+
+  background-color: transparent;
+  padding: 0;
+  border: none;
+  color: var(--dark-grey);
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+}
+
+.button:hover,
+.button:focus {
+  filter: brightness(0.9);
+  transform: scale(1.2);
+}
+
+.svg {
+  --svg-size: 30px;
+
+  fill: currentColor;
+  width: var(--svg-size);
+}
+
+@media (max-width: 900px) {
+  .button {
+    --margin: 0.5rem;
+  }
+
+  .svg {
+    --svg-size: 20px;
+  }
+}
