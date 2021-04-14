@@ -3,6 +3,7 @@ import { RichText } from "prismic-reactjs";
 import { linkResolver } from "prismic-configuration";
 import CodeImage from "./codeImage";
 import Image from "./image";
+import CodeBlock from "./codeBlock";
 
 export default function Parser({ data }) {
   return (
@@ -20,6 +21,16 @@ export default function Parser({ data }) {
             const props = { codeSnippet, ...slice.primary.image };
 
             return <CodeImage key={props.url} {...props} />;
+          }
+          case "code": {
+            const { language, code } = slice.primary;
+            let codeSnippet = code[0].text;
+
+            return (
+              <div key={codeSnippet}>
+                <CodeBlock codeSnippet={codeSnippet} language={language} />
+              </div>
+            );
           }
           case "text": {
             const paragraphs = slice.primary.content;
