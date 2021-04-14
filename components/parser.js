@@ -1,5 +1,6 @@
 import { RichText } from "prismic-reactjs";
 
+import { linkResolver } from "prismic-configuration";
 import CodeImage from "./codeImage";
 import Image from "./image";
 
@@ -22,10 +23,13 @@ export default function Parser({ data }) {
           }
           case "text": {
             const paragraphs = slice.primary.content;
-            return <RichText key={paragraphs[0].text} render={paragraphs} />;
+
+            return (
+              <RichText key={paragraphs[0].text} linkResolver={linkResolver} render={paragraphs} />
+            );
           }
           default: {
-            console.warn("Unknown slice type passed to parser");
+            console.warn(`Unknown slice type passed to parser: ${slice["slice_type"]}`);
             return null;
           }
         }

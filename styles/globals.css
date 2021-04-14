@@ -27,6 +27,10 @@ strong {
   font-weight: 500;
 }
 
+a {
+  color: var(--pink);
+}
+
 :root {
   --blue: #66ccff;
   --yellow: #ccff33;

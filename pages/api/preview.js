@@ -1,13 +1,4 @@
-import { prismicClient } from "prismic-configuration.js";
-
-function linkResolver(doc) {
-  // Pretty URLs for known types
-  if (doc.type === "post") return `/posts/${doc.uid}`;
-  if (doc.type === "landing_page") return "/";
-
-  // Fallback for other types, in case new custom types get created
-  return `/${doc.uid}`;
-}
+import { prismicClient, linkResolver } from "prismic-configuration.js";
 
 export default async function preview(req, res) {
   const { token: ref, documentId } = req.query;
