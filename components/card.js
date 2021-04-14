@@ -4,9 +4,7 @@ export default function Card({ children, image }) {
   return (
     <div className={styles.card}>
       {image && image.url && (
-        <div className={styles["image-wrapper"]}>
-          <img className={styles["heading-image"]} src={image.url} alt={image.alt}></img>
-        </div>
+        <div className={styles.banner} style={{ backgroundImage: `url(${image.url})` }} />
       )}
       {children}
     </div>
