@@ -5,7 +5,7 @@ import CodeImage from "./codeImage";
 import Image from "./image";
 import CodeBlock from "./codeBlock";
 
-export default function Parser({ data }) {
+export default function Parser({ data = [] }) {
   return (
     <>
       {data.map((slice) => {

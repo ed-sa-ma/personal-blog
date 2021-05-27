@@ -4,7 +4,7 @@ import { prismicClient, Prismic } from "prismic-configuration";
 import Card from "@components/card";
 import Parser from "@components/parser";
 
-export default function Post({ doc }) {
+export default function Post({ doc = {} }) {
   let { heading_image, headline, body } = doc;
 
   return (
