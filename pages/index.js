@@ -2,9 +2,10 @@ import Head from "next/head";
 import Link from "next/link";
 
 import { Prismic, prismicClient } from "prismic-configuration.js";
-import Card from "@components/card.js";
-import Parser from "@components/parser";
+import Card from "@components/card";
 import List from "@components/list";
+import Parser from "@components/parser";
+import Preview from "@components/preview";
 
 export default function Home({ doc, posts }) {
   const { headline, list_headline, body } = doc;
@@ -22,9 +23,7 @@ export default function Home({ doc, posts }) {
         <Card>
           <h1 style={{ textAlign: "center" }}>{list_headline}</h1>
           {posts.map((post) => (
-            <Link key={post.uid} href={`/posts/${post.uid}`}>
-              <a>{post.headline}</a>
-            </Link>
+            <Preview key={post.uid} {...post} />
           ))}
         </Card>
       </List>
@@ -42,8 +41,12 @@ export async function getStaticProps({ preview = false, previewData }) {
     var { data: doc } = docRes;
     let { results } = postsRes;
 
-    var posts = results.map(({ uid, data }) => {
-      return { uid, headline: data.headline };
+    var posts = results.map(({ uid, data, last_publication_date }) => {
+      return {
+        uid,
+        headline: data.headline,
+        updated: last_publication_date
+      };
     });
   } catch (error) {
     console.error(`Error fetching static props in Home component. Type: ${error.name}`);
