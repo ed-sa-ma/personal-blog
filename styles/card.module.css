@@ -21,7 +21,8 @@
 .banner {
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
-  height: 250px;
+  height: 30vw;
+  max-height: 250px;
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
