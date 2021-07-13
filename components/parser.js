@@ -4,6 +4,7 @@ import { linkResolver } from "prismic-configuration";
 import CodeImage from "./codeImage";
 import Image from "./image";
 import CodeBlock from "./codeBlock";
+import Stackblitz from "./stackblitz";
 
 export default function Parser({ data = [] }) {
   return (
@@ -38,6 +39,11 @@ export default function Parser({ data = [] }) {
             return (
               <RichText key={paragraphs[0].text} linkResolver={linkResolver} render={paragraphs} />
             );
+          }
+          case "stackblitz": {
+            const id = slice.primary.project_id;
+
+            return <Stackblitz key={id} id={id}></Stackblitz>;
           }
           default: {
             console.warn(`Unknown slice type passed to parser: ${slice["slice_type"]}`);

@@ -298,6 +298,11 @@
   dependencies:
     cross-fetch "^3.0.6"
 
+"@stackblitz/sdk@^1.5.2":
+  version "1.5.2"
+  resolved "https://registry.yarnpkg.com/@stackblitz/sdk/-/sdk-1.5.2.tgz#8589c4f6dd8df69bc82f67c2677754ef87ab16f3"
+  integrity sha512-rV8HJb7pti8UBROgVUbxc6f1DGxuUpaGCdQvxvHcGecwqqVMB4XAOzeGuk4HkQLmyCrH/9qTbNA6ch4FwQZRDQ==
+
 "@types/node@*":
   version "14.14.37"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-14.14.37.tgz#a3dd8da4eb84a996c36e331df98d82abd76b516e"
