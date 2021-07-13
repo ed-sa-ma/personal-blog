@@ -1,7 +1,7 @@
 import { useCallback, useState } from "react";
 
-import Image from "./image";
 import styles from "@styles/codeImage.module.css";
+import Image from "./image";
 
 export default function CodeImage({ codeSnippet, ...rest }) {
   const [copied, setCopied] = useState(false);

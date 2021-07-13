@@ -1,10 +1,10 @@
 import { useCallback, useState } from "react";
 import cn from "classnames";
 
-import ColorLogo from "./colorLogo";
 import { getDiagonal } from "@helpers";
 import { useElementResize, useMovingLayers } from "@hooks";
 import styles from "@styles/background.module.css";
+import ColorIcon from "./colorIcon";
 
 export default function Background() {
   const setCssVar = useCallback((element) => {
@@ -38,7 +38,7 @@ export default function Background() {
           );
         })}
       </div>
-      <ColorLogo handleClick={animate} />
+      <ColorIcon handleClick={animate} />
     </>
   );
 }

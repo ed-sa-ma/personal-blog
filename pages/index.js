@@ -1,5 +1,4 @@
 import Head from "next/head";
-import Link from "next/link";
 
 import { Prismic, prismicClient } from "prismic-configuration.js";
 import Card from "@components/card";

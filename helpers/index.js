@@ -2,6 +2,7 @@
  * Apply Pythagoras theorem to height and width of an element to get the size of its diagonal.
  * If no element is provided we return window's diagonal.
  * @param {HTMLElement} [parent]
+ * @returns {number} diagonal length in pixels.
  */
 function getDiagonal(parent) {
   if (parent) {

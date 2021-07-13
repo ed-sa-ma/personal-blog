@@ -10,7 +10,7 @@
 
 .link {
   text-decoration-color: transparent;
-  transition: text-decoration-color 0.3s linear;
+  transition: text-decoration-color 0.1s linear;
 }
 
 .link:hover {

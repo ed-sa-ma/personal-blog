@@ -1,6 +1,6 @@
-import styles from "@styles/colorLogo.module.css";
+import styles from "@styles/colorIcon.module.css";
 
-export default function ColorLogo({ handleClick }) {
+export default function ColorIcon({ handleClick }) {
   return (
     <button className={styles.button} onClick={handleClick} title="Change background">
       <svg
