@@ -13,7 +13,6 @@
   transition: transform 0.2s ease-in-out;
 }
 
-.button:hover,
 .button:focus {
   filter: brightness(0.9);
   transform: scale(1.2);
@@ -24,6 +23,14 @@
 
   fill: currentColor;
   width: var(--svg-size);
+  vertical-align: middle;
+}
+
+@media (hover: hover) {
+  .button:hover {
+    filter: brightness(0.9);
+    transform: scale(1.2);
+  }
 }
 
 @media (max-width: 900px) {
@@ -33,5 +40,23 @@
 
   .svg {
     --svg-size: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .button {
+    z-index: 1;
+    padding: 0.2em;
+    border-radius: 50%;
+  }
+
+  .button::before {
+    position: absolute;
+    inset: 0;
+
+    border-radius: 50%;
+    content: "";
+    background-color: var(--white);
+    filter: drop-shadow(5px 5px 10px var(--black));
   }
 }

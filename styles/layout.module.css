@@ -34,7 +34,7 @@
   }
 }
 
-@media (mx-width: 480px) {
+@media (max-width: 480px) {
   .layout {
     --layout-padding: 1rem;
   }

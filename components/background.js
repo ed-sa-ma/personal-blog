@@ -38,7 +38,7 @@ export default function Background() {
           );
         })}
       </div>
-      <ColorIcon handleClick={animate} />
+      <ColorIcon className={styles.icon} handleClick={animate} />
     </>
   );
 }
