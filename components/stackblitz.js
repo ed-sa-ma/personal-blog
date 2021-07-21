@@ -8,6 +8,7 @@ export default function Stackblitz({ id, options }) {
     sdk.embedProjectId(elementId, id, {
       openFile: "script.js",
       view: "preview",
+      height: 450,
       hideExplorer: true,
       hideNavigation: true,
       ...options
