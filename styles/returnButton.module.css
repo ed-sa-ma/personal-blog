@@ -1,0 +1,38 @@
+.wrapper {
+  text-align: center;
+  padding-top: 1rem;
+}
+
+.button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--pink);
+  color: var(--white);
+  font-size: 1.3em;
+  width: 100%;
+  max-width: 300px;
+  padding: 0.5em;
+  border: 0;
+  border-radius: 5px;
+  box-shadow: 4px 4px var(--translucent-blue), -4px -4px var(--translucent-green);
+  font-family: inherit;
+  transition: box-shadow 0.2s cubic-bezier(0.29, 0.56, 0.51, 1.57);
+  text-decoration: none;
+}
+
+.icon {
+  height: 1em;
+}
+
+@media (hover: hover) {
+  .button:hover {
+    box-shadow: 10px 10px var(--translucent-blue), -10px -10px var(--translucent-green);
+  }
+}
+
+@media (max-width: 480px) {
+  .button {
+    font-size: 1em;
+  }
+}

@@ -3,6 +3,7 @@ import Head from "next/head";
 import { prismicClient, Prismic } from "prismic-configuration";
 import Card from "@components/card";
 import Parser from "@components/parser";
+import ReturnButton from "@components/returnButton";
 
 export default function Post({ doc = {} }) {
   let { heading_image, headline, body } = doc;
@@ -15,6 +16,7 @@ export default function Post({ doc = {} }) {
       <Card image={heading_image}>
         <h1>{headline}</h1>
         <Parser data={body} />
+        <ReturnButton />
       </Card>
     </>
   );

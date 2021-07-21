@@ -1,7 +1,7 @@
 export default function LinkIcon({ className }) {
   return (
     <svg className={className} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18.97 18.97">
-      <rect id="placeholder" fill="transparent" width="18.97" height="18.97" />
+      <rect fill="transparent" width="18.97" height="18.97" />
       <path fill="currentColor" d="M13,10.51H6a1,1,0,0,1,0-2h7a1,1,0,0,1,0,2Z" />
       <path
         fill="currentColor"

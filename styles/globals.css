@@ -63,10 +63,14 @@ a {
 
 :root {
   --blue: #66ccff;
+  --translucent-blue: rgba(102, 204, 255, 0.5);
   --yellow: #ccff33;
+  --translucent-yellow: rgba(204, 255, 51, 0.5);
   --pink: #f42a77;
+  --translucent-pink: rgb(244, 42, 119, 0.5);
   --dark-pink: #d22768;
   --green: #33c18b;
+  --translucent-green: rgba(51, 193, 139, 0.5);
   --black: #000000;
   --white: #ffffff;
   --dark-grey: #444444;
