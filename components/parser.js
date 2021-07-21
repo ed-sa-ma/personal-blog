@@ -1,5 +1,7 @@
 import { RichText } from "prismic-reactjs";
 
+import { htmlSerializer } from "@helpers";
+
 import { linkResolver } from "prismic-configuration";
 import CodeImage from "./codeImage";
 import Image from "./image";
@@ -37,7 +39,12 @@ export default function Parser({ data = [] }) {
             const paragraphs = slice.primary.content;
 
             return (
-              <RichText key={paragraphs[0].text} linkResolver={linkResolver} render={paragraphs} />
+              <RichText
+                key={paragraphs[0].text}
+                linkResolver={linkResolver}
+                render={paragraphs}
+                htmlSerializer={htmlSerializer}
+              />
             );
           }
           case "stackblitz": {
