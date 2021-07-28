@@ -1,0 +1,38 @@
+.container {
+  border: solid 1px lightgrey;
+  border-radius: 5px;
+  display: flex;
+}
+
+.textWrapper {
+  padding: 1em;
+}
+
+.link {
+  text-decoration-color: transparent;
+  transition: text-decoration-color 0.1s linear;
+}
+
+.link:hover {
+  text-decoration-color: var(--pink);
+}
+
+.headline {
+  width: fit-content;
+  background-image: linear-gradient(
+    45deg,
+    var(--pink),
+    var(--pink),
+    var(--dark-pink),
+    var(--pink),
+    var(--pink)
+  );
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  margin: 0;
+}
+
+.dates {
+  color: var(--dark-grey);
+}

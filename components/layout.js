@@ -1,5 +1,6 @@
 import { useCallback, useRef } from "react";
 import Head from "next/head";
+import Link from "next/link";
 
 import Background from "@components/background";
 import Logo from "@components/logo";
@@ -28,7 +29,11 @@ export default function Layout({ children }) {
       </Head>
       <Background />
       <div ref={logoRef} className={styles.logo}>
-        <Logo />
+        <Link href="/">
+          <a>
+            <Logo />
+          </a>
+        </Link>
       </div>
       <div className={styles.children}>{children}</div>
     </div>

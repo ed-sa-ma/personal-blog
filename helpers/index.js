@@ -1,7 +1,37 @@
+import { Elements } from "prismic-reactjs";
+
+import LinkedHeadline from "@components/linkedHeadline";
+
+const headlineMap = {
+  [Elements.heading1]: "h1",
+  [Elements.heading2]: "h2",
+  [Elements.heading3]: "h3",
+  [Elements.heading4]: "h4",
+  [Elements.heading5]: "h5",
+  [Elements.heading6]: "h6"
+};
+
+/**
+ * Customizes html output for rich-text content coming from Prismic.
+ * @see {@link https://prismic.io/docs/technologies/advanced-rich-text-templating-nextjs}
+ *
+ * @param {string} type
+ * @returns {import("react").ReactElement || HTMLElement}
+ */
+function htmlSerializer(_, { type, text }) {
+  if (Object.keys(headlineMap).includes(type)) {
+    return <LinkedHeadline element={headlineMap[type]} text={text} />;
+  }
+
+  return null;
+}
+
 /**
  * Apply Pythagoras theorem to height and width of an element to get the size of its diagonal.
  * If no element is provided we return window's diagonal.
+ *
  * @param {HTMLElement} [parent]
+ * @returns {number} diagonal length in pixels.
  */
 function getDiagonal(parent) {
   if (parent) {
@@ -46,4 +76,4 @@ function debounce(cb, ms = DEFAULT_TIME) {
   return debounced;
 }
 
-export { debounce, getDiagonal };
+export { debounce, getDiagonal, htmlSerializer };
