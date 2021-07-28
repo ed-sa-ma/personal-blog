@@ -2,8 +2,5 @@
   display: flex;
   flex-direction: column;
   align-items: stretch;
-}
-
-.list > * + * {
-  margin-top: 1rem;
+  gap: 1rem;
 }

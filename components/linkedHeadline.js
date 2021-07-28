@@ -18,13 +18,6 @@ const REPLACEMENTS = {
   ñ: "n"
 };
 
-"What are tagged template literals?"
-  .split("")
-  .map((c) => {
-    return REPLACEMENTS.hasOwnProperty(c) ? REPLACEMENTS[c] : c.toLocaleLowerCase();
-  })
-  .join("");
-
 export default function LinkedHeadline({ element, text }) {
   const href = useMemo(() => {
     let result = text
