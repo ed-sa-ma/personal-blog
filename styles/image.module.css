@@ -1,0 +1,18 @@
+.image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 100%;
+}
+
+.image-element {
+  width: 70%;
+  max-width: var(--max-width);
+  filter: drop-shadow(var(--image-shadow));
+}
+
+@media (max-width: 480px) {
+  .image-element {
+    width: 100%;
+  }
+}

@@ -1,15 +1,15 @@
 .layout {
-  --padding: 4rem;
+  --layout-padding: 4rem;
 
-  padding: var(--padding);
+  padding: var(--layout-padding);
   transition: padding-top 0.1s linear;
 }
 
 .logo {
   position: fixed;
 
-  top: var(--padding);
-  left: var(--padding);
+  top: var(--layout-padding);
+  left: var(--layout-padding);
 }
 
 .children {
@@ -17,19 +17,25 @@
   margin: 0 auto;
 }
 
-@media screen and (max-width: 1200px) {
+@media (max-width: 1200px) {
   .layout {
-    --padding: 2rem;
+    --layout-padding: 2rem;
     --logo-content-margin: 1rem;
 
-    padding-top: calc(var(--padding) + var(--logo-height) + var(--logo-content-margin));
+    padding-top: calc(var(--layout-padding) + var(--logo-height) + var(--logo-content-margin));
     flex-direction: column;
     align-items: stretch;
   }
 
   .logo {
-    right: var(--padding);
+    right: var(--layout-padding);
 
     text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .layout {
+    --layout-padding: 1rem;
   }
 }

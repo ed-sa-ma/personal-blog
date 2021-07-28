@@ -1,0 +1,43 @@
+.container {
+  --icon-width: 0.7em;
+  --spacing: 0.5em;
+
+  position: relative;
+
+  display: inline-flex;
+  scroll-margin-top: 1em;
+}
+
+.link {
+  padding-right: var(--spacing);
+}
+
+.icon {
+  width: var(--icon-width);
+}
+
+.headline {
+  transition: transform 0.2s 0.2s linear;
+}
+
+@media (hover: hover) {
+  .link {
+    position: absolute;
+    top: 50%;
+    left: 0;
+
+    opacity: 0;
+    transition: opacity 0.2s linear;
+    transform: translateY(-50%);
+  }
+
+  .container:hover .headline {
+    transform: translateX(calc(var(--icon-width) + var(--spacing)));
+    transition-delay: 0;
+  }
+
+  .container:hover .link {
+    opacity: 1;
+    transition-delay: 0.2s;
+  }
+}

@@ -1,8 +1,15 @@
+@import "./font-face.css";
+
+html {
+  background-color: var(--dark-pink);
+  scroll-behavior: smooth;
+}
+
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: monospace;
+  font-family: "Poppins", sans-serif;
 }
 
 * {
@@ -11,15 +18,66 @@ body {
   box-sizing: border-box;
 }
 
+p,
+li {
+  line-height: 2;
+}
+
+strong {
+  font-weight: 500;
+}
+
+a {
+  color: var(--pink);
+}
+
+:is(h1, h2, h3, h4, h5, h6) {
+  margin-bottom: 0;
+}
+
+@media (min-width: 480px) {
+  h1 {
+    font-size: 3em;
+  }
+
+  h2 {
+    font-size: 2em;
+  }
+
+  h3 {
+    font-size: 1.5em;
+  }
+
+  h4 {
+    font-size: 1.33em;
+  }
+
+  h5 {
+    font-size: 1em;
+  }
+
+  h6 {
+    font-size: 0.9em;
+  }
+}
+
 :root {
   --blue: #66ccff;
+  --translucent-blue: rgba(102, 204, 255, 0.5);
   --yellow: #ccff33;
+  --translucent-yellow: rgba(204, 255, 51, 0.5);
   --pink: #f42a77;
+  --translucent-pink: rgb(244, 42, 119, 0.5);
+  --dark-pink: #d22768;
   --green: #33c18b;
+  --translucent-green: rgba(51, 193, 139, 0.5);
   --black: #000000;
   --white: #ffffff;
   --dark-grey: #444444;
+  --grey: #888888;
   --light-grey: #bbbbbb;
 
   --basic-shadow: 0px -1px 22px -3px rgba(0, 0, 0, 0.36);
+  --dark-shadow: 5px 5px 5px rgba(0, 0, 0, 0.36);
+  --image-shadow: 5px 5px var(--dark-grey);
 }

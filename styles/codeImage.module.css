@@ -1,0 +1,19 @@
+.copy-button {
+  position: absolute;
+  bottom: 1rem;
+  /* Value related to max-width property of image-element in image.module.css */
+  right: calc(15% + 1rem);
+
+  cursor: pointer;
+  background-color: var(--light-grey);
+  color: var(--black);
+  font-family: inherit;
+  border: 0;
+  padding: 0.5rem;
+}
+
+@media (max-width: 480px) {
+  .copy-button {
+    display: none;
+  }
+}
