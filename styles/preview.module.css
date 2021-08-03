@@ -2,10 +2,12 @@
   border: solid 1px lightgrey;
   border-radius: 5px;
   display: flex;
-}
-
-.textWrapper {
   padding: 1em;
+  width: 100%;
+  display: flex;
+  gap: 1rem;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .link {
@@ -35,4 +37,5 @@
 
 .dates {
   color: var(--dark-grey);
+  white-space: nowrap;
 }

@@ -40,11 +40,12 @@ export async function getStaticProps({ preview = false, previewData }) {
     var { data: doc } = docRes;
     let { results } = postsRes;
 
-    var posts = results.map(({ uid, data, last_publication_date }) => {
+    var posts = results.map(({ uid, data, last_publication_date, first_publication_date }) => {
       return {
         uid,
         headline: data.headline,
-        updated: last_publication_date
+        updated: last_publication_date,
+        published: first_publication_date
       };
     });
   } catch (error) {
